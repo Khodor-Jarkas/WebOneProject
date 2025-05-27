@@ -1,0 +1,126 @@
+<section id="skills" class="skills">
+    <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <!-- Technical Skills Column -->
+            <div class="skills-technical">
+                <h3>Technical Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>HTML/CSS</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>JavaScript</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Java</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>C++</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Skills Column - Fixed Version -->
+            <div class="skills-professional">
+                <h3>Professional Skills</h3>
+                <div class="professional-skills-grid">
+                    <!-- Communication -->
+                    <div class="professional-skill">
+                        <div class="radial-progress" data-value="90">
+                            <svg>
+                                <circle class="progress-bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress-fill" cx="60" cy="60" r="50"></circle>
+                            </svg>
+                            <div class="percentage">90%</div>
+                        </div>
+                        <h4>Communication</h4>
+                    </div>
+                    
+                    <!-- Teamwork -->
+                    <div class="professional-skill">
+                        <div class="radial-progress" data-value="85">
+                            <svg>
+                                <circle class="progress-bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress-fill" cx="60" cy="60" r="50"></circle>
+                            </svg>
+                            <div class="percentage">85%</div>
+                        </div>
+                        <h4>Teamwork</h4>
+                    </div>
+                    
+                    <!-- Problem Solving -->
+                    <div class="professional-skill">
+                        <div class="radial-progress" data-value="80">
+                            <svg>
+                                <circle class="progress-bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress-fill" cx="60" cy="60" r="50"></circle>
+                            </svg>
+                            <div class="percentage">80%</div>
+                        </div>
+                        <h4>Problem Solving</h4>
+                    </div>
+                    
+                    <!-- Leadership -->
+                    <div class="professional-skill">
+                        <div class="radial-progress" data-value="75">
+                            <svg>
+                                <circle class="progress-bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress-fill" cx="60" cy="60" r="50"></circle>
+                            </svg>
+                            <div class="percentage">75%</div>
+                        </div>
+                        <h4>Leadership</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Animation for radial progress circles
+document.addEventListener('DOMContentLoaded', function() {
+    const radialProgresses = document.querySelectorAll('.radial-progress');
+    
+    radialProgresses.forEach(progress => {
+        const value = progress.getAttribute('data-value');
+        const fill = progress.querySelector('.progress-fill');
+        const percentage = progress.querySelector('.percentage');
+        
+        if (fill) {
+            // Calculate the offset (circumference = 2πr ≈ 314 for r=50)
+            const circumference = 314;
+            const offset = circumference - (value / 100) * circumference;
+            
+            // Set the CSS properties
+            fill.style.strokeDashoffset = offset;
+            if (percentage) {
+                percentage.textContent = `${value}%`;
+            }
+        }
+    });
+});
+</script>

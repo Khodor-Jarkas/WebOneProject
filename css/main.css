@@ -1,0 +1,32 @@
+/* Import Variables and Base Styles */
+@import url('_variables.css');
+@import url('utilities/_base.css');
+@import url('utilities/_utilities.css');
+
+/* Import Component Styles */
+@import url('components/_header.css');
+@import url('components/_hero.css');
+@import url('components/_about.css');
+@import url('components/_projects.css');
+@import url('components/_skills.css');
+@import url('components/_contact.css');
+@import url('components/_footer.css');
+
+/* Global Media Queries */
+@media (max-width: 992px) {
+    section {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+}
